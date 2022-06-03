@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-family: "Poppins", sans-serif;
   background-color: gainsboro;
 }
@@ -31,10 +31,16 @@ body {
   align-items: center;
 }
 
+.btns-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 .btn {
   border: none;
   cursor: pointer;
-  padding: 0.8rem;
+  padding: 1.2rem;
   border-radius: 9px;
   font-size: inherit;
 }
