@@ -31,10 +31,12 @@ const addBookToLibrary = function (book) {
 const showBook = function (book) {
   const html = `
   <div class="book">
-    <p>"${book.title}"</p>
+    <p class="title">"${book.title}"</p>
     <p>By ${book.author}</p>
     <p>${book.pages} page(s) read</p>
-    <p>${book.read === true ? "Read" : "Not Read"}</p>
+    <p class="read ${book.read === true ? "read-true" : "read-false"}">${
+    book.read === true ? "Read" : "Not Read"
+  }</p>
   </div>
   `;
   books.insertAdjacentHTML("beforeend", html);
@@ -120,6 +122,10 @@ btnSubmit.addEventListener("click", function (e) {
   }
   if (pages === "") {
     alert("Pages field is required!");
+    return;
+  }
+  if (isNaN(pages)) {
+    alert("Page numbers should be numbers!");
     return;
   }
   if (pages < 0) {
