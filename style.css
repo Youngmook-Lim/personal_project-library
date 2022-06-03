@@ -10,23 +10,31 @@ html {
 
 body {
   font-size: 3rem;
+  background-color: gainsboro;
 }
 
 .header {
-  height: 10rem;
+  /* height: 10rem; */
   background-color: cornflowerblue;
+}
+
+.header .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .library {
-  max-width: 100rem;
-  margin: 0 auto;
-  background-color: bisque;
+  background-color: wheat;
 }
 
-.library__container {
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+.books {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   align-items: center;

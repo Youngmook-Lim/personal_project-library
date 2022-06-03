@@ -1,6 +1,6 @@
 "use strict";
 
-const libraryContainer = document.querySelector(".library__container");
+const books = document.querySelector(".books");
 
 let myLibrary = [];
 
@@ -37,7 +37,7 @@ const showLibraryBooks = function () {
       <p>${book.read === true ? "Read" : "Not Read"}</p>
     </div>
     `;
-    libraryContainer.insertAdjacentHTML("beforeend", html);
+    books.insertAdjacentHTML("beforeend", html);
   });
 };
 
