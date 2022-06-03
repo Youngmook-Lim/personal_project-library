@@ -68,6 +68,7 @@ const getLocalStorage = function (book) {
 
 const reset = function () {
   localStorage.removeItem("books");
+  location.reload();
   // myLibrary = [];
   // showLibraryBooks();
 };
