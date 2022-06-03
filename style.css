@@ -39,27 +39,30 @@ body {
   font-size: inherit;
 }
 
-.library {
-  background-color: wheat;
+.library.container {
+  /* background-color: wheat; */
+  margin-top: 3.2rem;
 }
 
 .container {
-  max-width: 100rem;
+  max-width: 130rem;
   margin: 0 auto;
-  padding: 1.2rem;
+  padding: 2.4rem;
 }
 
 .books {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
   align-items: center;
   justify-items: center;
-  gap: 1.2rem;
-  padding: 1.2rem;
+  gap: 3.2rem;
+  /* padding: 1.2rem; */
 }
 
 .book {
-  border: 2px solid black;
+  background-color: cornflowerblue;
+  border-radius: 9px;
+  /* border: 2px solid black; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -67,14 +70,14 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
-  padding: 1.2rem;
+  padding: 2.4rem;
 }
 
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   /* max-width: 60rem; */
   background-color: chartreuse;
   border-radius: 9px;
@@ -82,6 +85,10 @@ body {
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: all 0.5s;
+}
+
+.modal.hidden {
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .add-book {

@@ -12,6 +12,7 @@
     <header class="header">
       <div class="container">
         <h1>Library</h1>
+        <button class="btn btn__remove-local">Remove Data</button>
         <button class="btn btn__add">+ Add Book</button>
       </div>
     </header>
@@ -23,13 +24,13 @@
         <button class="btn__close-modal">x</button>
         <h3 class="add-book__title">Add New Book</h3>
         <label>Title: </label>
-        <input type="text" />
+        <input type="text" class="form-input form-input--title" required />
         <label>Author: </label>
-        <input type="text" " />
+        <input type="text" class="form-input form-input--author" required />
         <label>Pages Read: </label>
-        <input type="text" />
+        <input type="number" class="form-input form-input--pages" required />
         <label>Have you read it? </label>
-        <input type="checkbox" />
+        <input type="checkbox" class="form-input form-input--read" />
         <button class="btn btn__submit">Add</button>
       </form>
     </div>
