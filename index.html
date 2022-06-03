@@ -12,11 +12,27 @@
     <header class="header">
       <div class="container">
         <h1>Library</h1>
-        <button class="btn">Create New Book</button>
+        <button class="btn btn__add">+ Add Book</button>
       </div>
     </header>
     <main class="library container">
       <div class="books"></div>
     </main>
+    <div class="modal hidden">
+      <form class="add-book">
+        <button class="btn__close-modal">x</button>
+        <h3 class="add-book__title">Add New Book</h3>
+        <label>Title: </label>
+        <input type="text" />
+        <label>Author: </label>
+        <input type="text" " />
+        <label>Pages Read: </label>
+        <input type="text" />
+        <label>Have you read it? </label>
+        <input type="checkbox" />
+        <button class="btn btn__submit">Add</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
   </body>
 </html>

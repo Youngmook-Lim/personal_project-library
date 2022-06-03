@@ -1,6 +1,11 @@
 "use strict";
 
 const books = document.querySelector(".books");
+const btnAdd = document.querySelector(".btn__add");
+const btnSubmit = document.querySelector(".btn__submit");
+const btnCloseModal = document.querySelector(".btn__close-modal");
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
 
 let myLibrary = [];
 
@@ -42,3 +47,25 @@ const showLibraryBooks = function () {
 };
 
 showLibraryBooks();
+
+// Modal Window
+const toggleHidden = function () {
+  modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+};
+
+btnAdd.addEventListener("click", function () {
+  toggleHidden();
+});
+
+btnCloseModal.addEventListener("click", function () {
+  toggleHidden();
+});
+overlay.addEventListener("click", function () {
+  toggleHidden();
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) toggleHidden();
+});
+
+btnSubmit.addEventListener("click", function (e) {});
