@@ -85,7 +85,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   /* max-width: 60rem; */
-  background-color: chartreuse;
+  background-color: hsl(330, 100%, 71%);
   border-radius: 9px;
   padding: 3.2rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
@@ -121,6 +121,15 @@ body {
 .btn__submit {
   grid-column: 1 / -1;
   justify-self: center;
+}
+
+.add-book__title {
+  margin-bottom: 1.6rem;
+}
+
+.btn__submit {
+  width: 40%;
+  margin-top: 1.6rem;
 }
 
 .btn__close-modal {
