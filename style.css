@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-  height: 20rem;
+  height: 10rem;
   background-color: cornflowerblue;
   display: flex;
   justify-content: center;
