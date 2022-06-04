@@ -154,6 +154,11 @@ body {
   margin-top: 1.6rem;
 }
 
+.btn__remove {
+  margin-top: 1.6rem;
+  background-color: tomato;
+}
+
 .btn__close-modal {
   position: absolute;
   top: 0.5rem;
