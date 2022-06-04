@@ -119,6 +119,7 @@ document.addEventListener("keydown", function (e) {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  console.log(e);
   const title = inputTitle.value;
   const author = inputAuthor.value;
   const pages = inputPages.value;
@@ -163,11 +164,13 @@ library.addEventListener("click", function (e) {
   if (!btn.closest(".btn__remove")) return;
 
   const book = btn.closest(".book");
-  const bookInLibrary = myLibrary.find((item) => item.id === +book.dataset.id);
-  const index = myLibrary.indexOf(bookInLibrary);
+  const id = +book.dataset.id;
+  const bookInLibrary = myLibrary.find((item) => item.id === id);
+  const indexLib = myLibrary.indexOf(bookInLibrary);
 
-  myLibrary.splice(index, 1);
+  myLibrary.splice(indexLib, 1);
   book.remove();
+  setLocalStorage();
 });
 
 btnRemoveLocal.addEventListener("click", reset);
