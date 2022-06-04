@@ -61,7 +61,8 @@ body {
 
 .books {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(38rem, 1fr)); */
   align-items: center;
   justify-items: center;
   gap: 3.2rem;
@@ -88,7 +89,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   /* max-width: 60rem; */
-  background-color: hsl(330, 100%, 71%);
+  background-color: #ffd43b;
   border-radius: 9px;
   padding: 3.2rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
@@ -123,6 +124,7 @@ body {
 .btn__submit {
   grid-column: 1 / -1;
   justify-self: center;
+  font-weight: 700;
 }
 
 .add-book__title {
@@ -134,6 +136,8 @@ body {
 }
 
 .read {
+  /* width: 50%; */
+  text-align: center;
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
   font-weight: 700;
@@ -149,11 +153,13 @@ body {
 }
 
 .btn__submit {
-  width: 40%;
+  /* width: 30%; */
   margin-top: 1.6rem;
+  padding: 1.2rem 2.4rem;
 }
 
 .btn__remove {
+  width: 100%;
   padding: 1.2rem 2.4rem;
   margin-top: 1.6rem;
   background-color: #adb5bd;
@@ -162,7 +168,7 @@ body {
 .btn__close-modal {
   position: absolute;
   top: 0rem;
-  right: 1.8rem;
+  right: 1.4rem;
   font-size: 3.2rem;
   cursor: pointer;
 }
