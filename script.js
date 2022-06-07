@@ -50,7 +50,7 @@ const showBook = function (book) {
       <button class="btn read ${
         book.read === true ? "read-true" : "read-false"
       }">${book.read === true ? "다 읽음" : "읽는 중"}</button>
-      <button class="btn btn__remove">책 제거</button>
+      <button class="btn btn__remove">책 삭제</button>
     </div>
     `;
   } else {
