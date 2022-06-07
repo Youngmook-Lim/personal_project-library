@@ -5,6 +5,7 @@ const btnRemoveLocal = document.querySelector(".btn__remove-local");
 const btnAdd = document.querySelector(".btn__add");
 const btnSubmit = document.querySelector(".btn__submit");
 const btnCloseModal = document.querySelector(".btn__close-modal");
+// const btnRead = document.querySelector(".read");
 // const btnRemove = document.querySelectorAll(".btn__remove");
 const overlay = document.querySelector(".overlay");
 const modal = document.querySelector(".modal");
@@ -26,6 +27,12 @@ const Book = function (title, author, pages, read) {
   this.id = myLibrary.length === 0 ? 0 : myLibrary[myLibrary.length - 1].id + 1;
 };
 
+Book.prototype.changeRead = function () {
+  if (this.read == true) {
+    this.read = false;
+  } else this.read = true;
+};
+
 // Functions
 
 const addBookToLibrary = function (book) {
@@ -38,9 +45,9 @@ const showBook = function (book) {
     <p class="title">"${book.title}"</p>
     <p>By ${book.author}</p>
     <p>${book.pages} page(s) read</p>
-    <p class="read ${book.read === true ? "read-true" : "read-false"}">${
-    book.read === true ? "Read" : "Not Read"
-  }</p>
+    <button class="btn read ${
+      book.read === true ? "read-true" : "read-false"
+    }">${book.read === true ? "Read" : "Not Read"}</ㅠ>
     <button class="btn btn__remove">Remove Book</button>
   </div>
   `;
@@ -66,8 +73,13 @@ const setLocalStorage = function () {
 const getLocalStorage = function (book) {
   const data = JSON.parse(localStorage.getItem("books"));
   if (!data) return;
+  const newData = data.map((book) => {
+    const newBook = new Book(book.title, book.author, book.pages, book.read);
+    myLibrary.push(newBook);
+    return newBook;
+  });
 
-  myLibrary = data;
+  myLibrary = newData;
   showLibraryBooks();
 };
 
@@ -171,6 +183,24 @@ library.addEventListener("click", function (e) {
   myLibrary.splice(indexLib, 1);
   book.remove();
   setLocalStorage();
+});
+
+library.addEventListener("click", function (e) {
+  const btn = e.target;
+  if (!btn.closest(".read")) return;
+  const bookID = +btn.closest(".book").dataset.id;
+  const thisBook = myLibrary.find((el) => el.id === bookID);
+  thisBook.changeRead();
+  console.log(thisBook);
+  if (thisBook.read === false) {
+    btn.textContent = "Not Read";
+    btn.classList.add("read-false");
+    btn.classList.remove("read-true");
+  } else {
+    btn.textContent = "Read";
+    btn.classList.add("read-true");
+    btn.classList.remove("read-false");
+  }
 });
 
 btnRemoveLocal.addEventListener("click", reset);
