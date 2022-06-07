@@ -40,17 +40,33 @@ const addBookToLibrary = function (book) {
 };
 
 const showBook = function (book) {
-  const html = `
-  <div data-id="${book.id}" class="book">
-    <p class="title">"${book.title}"</p>
-    <p>By <span class="author">${book.author}</span></p>
-    <p class="pages">${book.pages} pages</p>
-    <button class="btn read ${
-      book.read === true ? "read-true" : "read-false"
-    }">${book.read === true ? "Read" : "Not Read"}</ㅠ>
-    <button class="btn btn__remove">Remove Book</button>
-  </div>
-  `;
+  let html;
+  if (document.location.pathname.includes("korean")) {
+    html = `
+    <div data-id="${book.id}" class="book">
+      <p class="title">"${book.title}"</p>
+      <p><span class="author">${book.author}</span></p>
+      <p class="pages">${book.pages} 페이지</p>
+      <button class="btn read ${
+        book.read === true ? "read-true" : "read-false"
+      }">${book.read === true ? "다 읽음" : "읽는 중"}</button>
+      <button class="btn btn__remove">책 제거</button>
+    </div>
+    `;
+  } else {
+    html = `
+    <div data-id="${book.id}" class="book">
+      <p class="title">"${book.title}"</p>
+      <p>By <span class="author">${book.author}</span></p>
+      <p class="pages">${book.pages} pages</p>
+      <button class="btn read ${
+        book.read === true ? "read-true" : "read-false"
+      }">${book.read === true ? "Read" : "Not Read"}</button>
+      <button class="btn btn__remove">Remove Book</button>
+    </div>
+    `;
+  }
+
   books.insertAdjacentHTML("beforeend", html);
 };
 

@@ -7,24 +7,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
     <script
       src="https://kit.fontawesome.com/2df99d1f05.js"
       crossorigin="anonymous"
     ></script>
     <script defer src="script.js"></script>
-    <title>Library</title>
+    <title>내 책꽂이</title>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <h1>Library</h1>
+        <h1>내 책꽂이</h1>
         <div class="btns-container">
-          <button class="btn btn__remove-local">Remove All</button>
-          <button class="btn btn__add">+ Add Book</button>
+          <button class="btn btn__remove-local">전체삭제</button>
+          <button class="btn btn__add">+ 책 추가</button>
         </div>
       </div>
     </header>
@@ -46,21 +47,21 @@
     <div class="modal hidden">
       <form class="add-book">
         <span class="btn__close-modal">×</span>
-        <h3 class="add-book__title">Add New Book</h3>
-        <label>Title: </label>
+        <h3 class="add-book__title">책 추가</h3>
+        <label>제 목 :</label>
         <input type="text" class="form-input form-input--title" required />
-        <label>Author: </label>
+        <label>저 자 :</label>
         <input type="text" class="form-input form-input--author" required />
-        <label>Pages: </label>
+        <label>페이지 수 :</label>
         <input type="number" class="form-input form-input--pages" required />
-        <label>Have you read it? </label>
+        <label>다 읽음? </label>
         <input type="checkbox" class="form-input form-input--read" />
-        <button class="btn btn__submit">Add</button>
+        <button class="btn btn__submit">추 가</button>
       </form>
     </div>
     <div class="overlay hidden"></div>
-    <a href="korean.html">
-      <button class="btn language-btn">한국어</button>
+    <a href="index.html">
+      <button class="btn language-btn">English</button>
     </a>
   </body>
 </html>
