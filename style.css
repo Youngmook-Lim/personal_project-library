@@ -133,6 +133,15 @@ body {
 
 .title {
   font-weight: 700;
+  font-size: 3rem;
+}
+
+.author {
+  font-style: italic;
+}
+
+.pages {
+  font-size: 2rem;
 }
 
 .read {
