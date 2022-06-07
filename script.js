@@ -201,6 +201,7 @@ library.addEventListener("click", function (e) {
     btn.classList.add("read-true");
     btn.classList.remove("read-false");
   }
+  setLocalStorage();
 });
 
 btnRemoveLocal.addEventListener("click", reset);
