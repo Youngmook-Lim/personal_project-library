@@ -44,7 +44,7 @@ const showBook = function (book) {
   <div data-id="${book.id}" class="book">
     <p class="title">"${book.title}"</p>
     <p>By <span class="author">${book.author}</span></p>
-    <p class="pages">${book.pages} page(s) read</p>
+    <p class="pages">${book.pages} pages</p>
     <button class="btn read ${
       book.read === true ? "read-true" : "read-false"
     }">${book.read === true ? "Read" : "Not Read"}</ㅠ>
