@@ -19,19 +19,22 @@ const library = document.querySelector(".library");
 
 let myLibrary = [];
 
-const Book = function (title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = myLibrary.length === 0 ? 0 : myLibrary[myLibrary.length - 1].id + 1;
-};
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id =
+      myLibrary.length === 0 ? 0 : myLibrary[myLibrary.length - 1].id + 1;
+  }
 
-Book.prototype.changeRead = function () {
-  if (this.read == true) {
-    this.read = false;
-  } else this.read = true;
-};
+  changeRead() {
+    if (this.read == true) {
+      this.read = false;
+    } else this.read = true;
+  }
+}
 
 // Functions
 
