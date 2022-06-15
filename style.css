@@ -225,7 +225,7 @@ body {
 }
 
 .language-btn {
-  position: absolute;
+  position: fixed;
   bottom: 0.8rem;
   right: 0.8rem;
   font-size: 1.6rem;
